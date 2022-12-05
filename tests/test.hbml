@@ -1,0 +1,16 @@
+:root {
+  head {
+    meta[charset="utf-8"]
+    meta[name="viewport" content="width=device-width, initial-scale=1"]
+    title {"hbml test 1"}
+    link[rel="stylesheet" href="styles.css"]
+  }
+  body {
+    div#prison {
+      span#holder { "0" }
+      bytton#minus { "-" }
+      button#plus { "+" }
+    }
+    link[type="module" href="script.js"]
+  }
+}
