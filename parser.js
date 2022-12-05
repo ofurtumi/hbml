@@ -305,15 +305,10 @@ const parseEl = (iter, parentTag = "") => {
     )
 }
 
-const parseHBML = (hbml) => {
+export const parseHBML = (hbml) => {
     // The input is wrapped in the "TRUE_ROOT" you can have multiple top level components, such as comments
     const parsed = `${parseElChild(createIterString(`${TRUE_ROOT}{${hbml.trim()}}`))}`
 
     // The "TRUE_ROOT" is stripped out of the final HTML output
     return parsed.substring(TRUE_ROOT.length+2, parsed.length-(TRUE_ROOT.length+3))
 }
-
-process.stdin.on("data", data => {
-    data = parseHBML(data.toString());
-    process.stdout.write(data);
-})
